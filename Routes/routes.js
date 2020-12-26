@@ -2,7 +2,7 @@ module.exports = (app) =>{
     const bodyParser = require('body-parser')
     const cors = require('cors')
     const homepage = require('../Controllers/homepage')
-    const notification = require('../Controllers/notification')
+    const register = require('../Controllers/register')
 
     app.use(bodyParser.urlencoded({
         extended: true
@@ -13,7 +13,7 @@ module.exports = (app) =>{
    
 
     app.get('/',homepage.homepage)
-    app.get('/not',notification.notification)
+    app.post('/register',register.register)
 
 
 }
